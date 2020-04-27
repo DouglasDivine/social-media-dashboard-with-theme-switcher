@@ -1,0 +1,448 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook-color: hsl(195, 100%, 50%);
+    --twitter-color: hsl(203, 89%, 53%);
+    --instagram-color: linear-gradient(to right,hsl(37,97%,70%),hsl(329,70%,58%));
+    --youtube-color: hsl(348, 97%, 39%);
+    
+    --Toggle: hsl(230, 22%, 74%)
+    
+    --white: hsl(0, 0%, 100%);
+    --TopBGPattern: hsl(225, 100%, 98%);
+    --CardBG: hsl(227, 47%, 96%);
+    --CardBGhover: hsl(227, 47%, 92%);
+    --Text: hsl(228, 12%, 44%);
+    --Text1: hsl(230, 17%, 14%);
+}
+
+:root[data-theme='dark'] {
+    --white: hsl(230, 17%, 14%);
+    --TopBGPattern: hsl(232, 19%, 15%);
+    --CardBG: hsl(228, 28%, 20%);
+    --CardBGhover: hsl(228, 28%, 25%);
+    --Text: hsl(228, 34%, 66%);
+    --Text1: hsl(0, 0%, 100%);
+
+    --Toggle: linear-gradient(45deg, hsl(210,78%,56%), hsl(146,68%,55%));
+}
+
+html {
+    background-color: var(--white);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    padding: 20px;
+}
+
+.header {
+    position: absolute;
+    background-color: var(--TopBGPattern);
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 20px 0px 20px;
+    padding-bottom: 80px;
+    border-radius: 0 0 10px 10px;
+}
+
+h1 {
+    color: var(--Text1);
+    font-size: 1.75em;
+}
+
+h2 {
+    color: var(--Text);
+    font-size: 0.875em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: var(--Text);
+    font-size: 1.75em;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+hr {
+    color: var(--Text);
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.toggle p {
+    color: var(--Text);
+    font-weight: 700;
+    font-size: 0.875em;
+}
+
+.toggle div {
+    margin-top: -20px;
+}
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 45px;
+    height: 20px;
+    background: hsl(230, 22%, 74%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  label:after {
+    content: '';
+    background: #FFF;
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+   transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+  }
+  
+  input:checked + label {
+    background: var(--Toggle);
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+.topdiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 130px;
+}
+
+.downdiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 130px;
+}
+
+.cardfacebook {
+    text-align: center;
+    background-color: var(--CardBG);
+    border-radius: 5px;
+    position: relative;
+    padding-bottom: 25px;
+    width: 374px;
+    margin-bottom: 25px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.cardfacebook:hover {
+    background-color: var(--CardBGhover);
+    cursor: pointer;
+}
+
+.cardtwitter:hover {
+    background-color: var(--CardBGhover);
+    cursor: pointer;
+}
+
+.cardinstagram:hover {
+    background-color: var(--CardBGhover);
+    cursor: pointer;
+}
+
+.cardyoutube:hover {
+    background-color: var(--CardBGhover);
+    cursor: pointer;
+}
+
+.minicard:hover {
+    background-color: var(--CardBGhover);
+    cursor: pointer;
+}
+
+.cardfacebook::before {
+    content: '';
+    display: block;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 4px;
+    width: 100%;
+    background: var(--facebook-color);
+}
+
+.cardfacebook div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.cardfacebook div {
+    padding-top: 25px;
+}
+
+.cardfacebook div p {
+    padding-left: 5px;
+    color: var(--Text);
+    font-weight: 700;
+    font-size: 0.875em;
+}
+
+.gigante{
+    color: var(--Text1);
+    font-size: 4em;
+    font-weight: 700;
+    padding-top: 25px;
+}
+
+.espacada {
+    text-transform: uppercase;
+    color: var(--Text);
+    font-size: 0.875em;
+    letter-spacing: 3px;
+}
+
+.verde {
+    color: hsl(163, 72%, 41%);
+    font-size: 0.875em;
+    font-weight: 700;
+    padding-top: 25px;
+}
+
+.vermelho {
+    color: hsl(356, 69%, 56%);
+    font-size: 0.875em;
+    font-weight: 700;
+    padding-top: 25px;
+}
+
+.cardtwitter {
+    text-align: center;
+    background-color: var(--CardBG);
+    border-radius: 5px;
+    position: relative;
+    padding-bottom: 25px;
+    width: 374px;
+    margin-bottom: 25px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.cardtwitter::before {
+    content: '';
+    display: block;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 4px;
+    width: 100%;
+    background: var(--twitter-color);
+}
+
+.cardtwitter div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.cardtwitter div {
+    padding-top: 25px;
+}
+
+.cardtwitter div p {
+    padding-left: 5px;
+    color: var(--Text);
+    font-weight: 700;
+    font-size: 0.875em;
+}
+
+.cardtwitter div i{
+    color: var(--twitter-color);
+    font-size: 1.5em;
+}
+
+.cardinstagram {
+    text-align: center;
+    background-color: var(--CardBG);
+    border-radius: 5px;
+    position: relative;
+    padding-bottom: 25px;
+    width: 374px;
+    margin-bottom: 25px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.cardinstagram::before {
+    content: '';
+    display: block;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 4px;
+    width: 100%;
+    background-image: var(--instagram-color);
+}
+
+.cardinstagram div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.cardinstagram div {
+    padding-top: 25px;
+}
+
+.cardinstagram div p {
+    padding-left: 5px;
+    color: var(--Text);
+    font-weight: 700;
+    font-size: 0.875em;
+}
+
+.cardinstagram div i{
+    background: -webkit-gradient(linear, left bottom, left top, from(hsl(37,97%,70%)), to(hsl(329,70%,58%)));
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: 1.5em;
+}
+
+.cardyoutube {
+    text-align: center;
+    background-color: var(--CardBG);
+    border-radius: 5px;
+    position: relative;
+    padding-bottom: 25px;
+    width: 374px;
+    margin-bottom: 25px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.cardyoutube::before {
+    content: '';
+    display: block;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 4px;
+    width: 100%;
+    background: var(--youtube-color);
+}
+
+.cardyoutube div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.cardyoutube div {
+    padding-top: 25px;
+}
+
+.cardyoutube div p {
+    padding-left: 5px;
+    color: var(--Text);
+    font-weight: 700;
+    font-size: 0.875em;
+}
+
+.minicard {
+    text-align: center;
+    background-color: var(--CardBG);
+    border-radius: 5px;
+    position: relative;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 374px;
+    margin: 0 12px 25px 12px;
+}
+
+.views {
+    display: block;
+    text-align: start;
+}
+
+.titleview {
+    color: var(--Text);
+    font-weight: 700;
+    font-size: 0.875em;
+}
+
+.numview {
+    font-size: 1.75em;
+    font-weight: 700;
+    color: var(--Text1);
+    margin-top: 20px;
+}
+
+.rate {
+    text-align: end;
+}
+
+.fa-facebook-official {
+    color: var(--facebook-color);
+    font-size: 1.5em;
+}
+
+.fa-twitter {
+    color: var(--twitter-color);
+    font-size: 1.5em;
+}
+
+.fa-youtube-play{
+    color: var(--youtube-color);
+    font-size: 1.5em;
+}
+
+.fa-instagram {
+    background: -webkit-gradient(linear, left bottom, left top, from(hsl(37,97%,70%)), to(hsl(329,70%,58%)));
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: 1.5em;
+}
+
+.attribution {
+    color: var(--Text);
+    font-size: 0.5em;
+    padding-top: 25px;
+}
+
+@media (max-width: 375px) 
+{
+  .cardfacebook {
+      margin-top: 30px;
+  }
+}
